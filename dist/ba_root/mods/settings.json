@@ -1,5 +1,9 @@
 {
   "bomb": {
     "default_bomb_count": 1
+  },
+  "spaz": {
+    "has_default_shields": false,
+    "has_default_boxing_gloves": false
   }
 } 
