@@ -21,6 +21,7 @@ from typing import TYPE_CHECKING
 import babase
 
 import bomb
+import spaz
 
 if TYPE_CHECKING:
     from typing import Any
@@ -32,6 +33,7 @@ import logger
 class modSetup(babase.Plugin):
     def on_app_running(self):
         bomb.apply_bomb_mods()
+        spaz.apply_spaz_mods()
         logger.log_success("BombSquad Mods initialized successfully!")
 
     def on_app_shutdown(self):
