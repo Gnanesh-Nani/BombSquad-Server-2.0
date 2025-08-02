@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.bsuuid
+.bsac2
+*.pyc
+/dist/ba_root/mods/config.json
+/dist/ba_root/mods/.config_prev.json

@@ -1,0 +1,70 @@
+{
+ "Achievements": {
+  "Free Loader": {
+   "Complete": true
+  }
+ },
+ "Auto Account State": "Server",
+ "Auto Balance Teams": true,
+ "Campaigns": {},
+ "CloudVals": {
+  "gct": [
+   "TimeoutError",
+   "efro.rpc.RPCEndpoint",
+   "efro.error.CommunicationError"
+  ]
+ },
+ "Default Player Profiles": {
+  "Client Input Device #1": "__account__",
+  "Client Input Device #2": "__account__"
+ },
+ "FFA Series Length": 24,
+ "Fleet Zone Ping Last Flush Time": 1754122620,
+ "Fleet Zone Pings": {
+  "prod": {
+   "bahrain.v4": 315.26393800231745,
+   "bahrain.v6": 278.6994899979618,
+   "delhi.v4": 84.1232509992551,
+   "dubai.v4": 182.31333500079927,
+   "dubai.v6": 165.66327100008493,
+   "hyderabad.v4": 71.01806599894189,
+   "hyderabad.v6": 57.495682001899695,
+   "kolkata.v4": 84.81143199969665,
+   "mumbai.v4": 68.16224900103407,
+   "mumbai.v6": 61.89148900011787
+  }
+ },
+ "Free-for-All Playlist Randomize": true,
+ "Free-for-All Playlist Selection": "__default__",
+ "Free-for-All Playlists": {},
+ "Idle Exit Minutes": null,
+ "Local Account Name": "Server22626229",
+ "Player Profiles": {
+  "__account__": {
+   "character": "Spaz",
+   "color": [
+    0.5,
+    0.25,
+    1.0
+   ],
+   "highlight": [
+    0.5,
+    0.25,
+    1.0
+   ]
+  }
+ },
+ "Plugins": {
+  "__init__.modSetup": {
+   "enabled": true
+  }
+ },
+ "Port": 43210,
+ "Show Tutorial": false,
+ "Signed In Last Session": false,
+ "Team Tournament Playlists": {},
+ "Teams Series Length": 7,
+ "launchCount": 53,
+ "lc14173": 1,
+ "lc14292": 1
+}
