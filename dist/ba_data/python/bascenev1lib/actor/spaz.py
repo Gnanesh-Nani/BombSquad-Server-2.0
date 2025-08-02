@@ -65,6 +65,8 @@ class Spaz(bs.Actor):
     default_bomb_type = 'normal'
     default_boxing_gloves = False
     default_shields = False
+    default_shield_hitpoints = 650
+    default_shield_decay_rate = 10.0
     default_hitpoints = 1000
 
     def __init__(
@@ -664,8 +666,8 @@ class Spaz(bs.Actor):
                 attrs={'color': (0.3, 0.2, 2.0), 'radius': 1.3},
             )
             self.node.connectattr('position_center', self.shield, 'position')
-        self.shield_hitpoints = self.shield_hitpoints_max = 650
-        self.shield_decay_rate = factory.shield_decay_rate if decay else 0
+        self.shield_hitpoints = self.shield_hitpoints_max = self.default_shield_hitpoints
+        self.shield_decay_rate = factory.shield_decay_rate if decay else self.default_shield_decay_rate
         self.shield.hurt = 0
         factory.shield_up_sound.play(1.0, position=self.node.position)
 
