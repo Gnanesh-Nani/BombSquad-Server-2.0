@@ -11,5 +11,9 @@
     },
     "has_default_boxing_gloves": false,
     "default_hitpoints": 1000
+  },
+  "stats": {
+    "record_stats": true,
+    "stats_file": "stats.json"
   }
 }
