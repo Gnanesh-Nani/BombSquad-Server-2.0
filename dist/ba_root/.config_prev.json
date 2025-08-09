@@ -135,25 +135,42 @@
   ]
  },
  "Default Player Profiles": {
-  "Client Input Device #1": "__account__",
+  "Client Input Device #1": "\uff2e \uff21\uff2e \uff29",
   "Client Input Device #2": "__account__"
  },
  "FFA Series Length": 24,
  "Fleet Zone Ping Last Flush Time": 1754122620,
  "Fleet Zone Pings": {
   "prod": {
-   "bangkok.v4": 146.55827694997424,
-   "delhi.v4": 89.34576945763547,
-   "hyderabad.v4": 59.0890795109226,
-   "hyderabad.v6": 67.06035753800825,
-   "kolkata.v4": 98.89938164617342,
-   "mumbai.v4": 71.7333028361827,
-   "mumbai.v6": 65.31945223575894
+   "bangkok.v4": 153.6439910014451,
+   "delhi.v4": 98.41475263985922,
+   "dubai.v4": 183.11538099987956,
+   "dubai.v6": 268.53451900024083,
+   "hyderabad.v4": 64.55885887936893,
+   "hyderabad.v6": 52.804796552318294,
+   "kolkata.v4": 88.51358997877833,
+   "mumbai.v4": 76.69959220898454,
+   "mumbai.v6": 69.74379405354557
   }
  },
  "Free-for-All Playlist Randomize": true,
- "Free-for-All Playlist Selection": "__default__",
- "Free-for-All Playlists": {},
+ "Free-for-All Playlist Selection": "timer",
+ "Free-for-All Playlists": {
+  "timer": [
+   {
+    "settings": {
+     "Chosen One Gets Gloves": true,
+     "Chosen One Gets Shield": false,
+     "Chosen One Time": 30,
+     "Epic Mode": false,
+     "Respawn Times": 1.0,
+     "Time Limit": 0,
+     "map": "Football Stadium"
+    },
+    "type": "bascenev1lib.game.chosenone.ChosenOneGame"
+   }
+  ]
+ },
  "Idle Exit Minutes": null,
  "Local Account Name": "Server22626229",
  "Player Profiles": {
@@ -196,7 +213,7 @@
   ]
  },
  "Teams Series Length": 7,
- "launchCount": 77,
+ "launchCount": 113,
  "lc14173": 1,
  "lc14292": 1
 }

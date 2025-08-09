@@ -5,5 +5,8 @@ __pycache__/
 .bsuuid
 .bsac2
 *.pyc
-/dist/ba_root/config.json
-/dist/ba_root/.config_prev.json
+dist/ba_root/config.json
+dist/ba_root/.config_prev.json
+.venv/
+.env
+.vscode/

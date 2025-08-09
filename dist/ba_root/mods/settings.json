@@ -1,11 +1,19 @@
 {
   "bomb": {
     "default_bomb_count": 1,
-    "default_bomb_type": "ice"
+    "default_bomb_type": "normal"
   },
   "spaz": {
-    "has_default_shields": false,
+    "shield": {
+      "has_default_shields": false,
+      "default_shield_decay_rate": 10.0,
+      "default_shield_hitpoints": 650
+    },
     "has_default_boxing_gloves": false,
     "default_hitpoints": 1000
+  },
+  "stats": {
+    "record_stats": true,
+    "stats_file": "stats.json"
   }
-} 
+}

@@ -22,6 +22,7 @@ import babase
 
 import bomb
 import spaz
+import stats
 
 if TYPE_CHECKING:
     from typing import Any
@@ -34,6 +35,7 @@ class modSetup(babase.Plugin):
     def on_app_running(self):
         bomb.apply_bomb_mods()
         spaz.apply_spaz_mods()
+        stats.apply_stats_mods()
         logger.log_success("BombSquad Mods initialized successfully!")
 
     def on_app_shutdown(self):
