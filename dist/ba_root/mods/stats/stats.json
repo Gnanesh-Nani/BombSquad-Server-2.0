@@ -3,12 +3,24 @@
     "last_display_name": "N A N I",
     "kills": 0,
     "deaths": 4,
-    "score": 288,
+    "score": 144,
     "kd": 0.0,
-    "games_played": 8,
+    "games_played": 7,
     "characters_used": {
-      "Agent Johnson": 8
+      "Agent Johnson": 7
     },
     "rank": 1
+  },
+  "pb-IF5TUXMtNQ==": {
+    "last_display_name": "Beowulf",
+    "kills": 3,
+    "deaths": 0,
+    "score": 138,
+    "kd": 3.0,
+    "games_played": 3,
+    "characters_used": {
+      "Spaz": 3
+    },
+    "rank": 2
   }
 }
