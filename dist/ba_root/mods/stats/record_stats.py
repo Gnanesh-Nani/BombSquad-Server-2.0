@@ -26,6 +26,13 @@ def _save_stats(stats: Dict[str, Any]) -> None:
     with open(STATS_FILE, 'w') as f:
         json.dump(stats, f, indent=2)
 
+def get_rank(account_id: str) -> int:
+    """Get the rank of a player by account ID."""
+    stats = _load_stats()
+    if account_id in stats:
+        return stats[account_id].get('rank', 0)
+    return 0
+
 def _calculate_ranks(stats: Dict[str, Any]) -> Dict[str, Any]:
     """Calculate and assign ranks to all players based on score."""
     # Create a list of players with their scores
