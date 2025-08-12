@@ -15,11 +15,16 @@
   "stats": {
     "record_stats": true,
     "stats_file": "stats.json",
+    "kd": {
+      "show_kd_on_spaz": true,
+      "kd_prefix": "kd : ",
+      "kd_suffix": ""
+    },
     "rank": {
       "show_rank_on_spaz": true,
       "unranked_text": "New Guy!",
-      "rank_prefix": ">> ",
-      "rank_suffix": " <<"
+      "rank_prefix": "#",
+      "rank_suffix": ""
     }
   }
 }

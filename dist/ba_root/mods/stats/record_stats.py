@@ -3,7 +3,8 @@ from typing import Dict, Any, List, Tuple
 from bascenev1._activitytypes import ScoreScreenActivity
 import bascenev1 as bs
 import utils
-from cache import stats_cache  # Import the singleton instance
+from cache import stats_cache  
+from cache import profile_cache
 import logger
 
 stats_settings = utils.get_module_setting("stats")
@@ -23,17 +24,19 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
             if account_id is not None:
                 # Get existing stats or initialize new entry
                 player_stats = stats_cache.get_player_stats(account_id, {
-                    'last_display_name': p_entry.name,
                     'kills': 0,
                     'deaths': 0,
                     'score': 0,
                     'kd': 0.0,
-                    'games_played': 0,
+                    'games_played': 0
+                })
+                    
+
+                player_profile = profile_cache.get_player_profile(account_id,{
                     'characters_used': {}
                 })
                 
                 # Update stats
-                player_stats['last_display_name'] = p_entry.name
                 player_stats['kills'] += p_entry.accum_kill_count
                 player_stats['deaths'] += p_entry.accum_killed_count
                 player_stats['score'] += p_entry.accumscore
@@ -42,19 +45,24 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
                     player_stats['deaths'] if player_stats['deaths'] > 0 else 1
                 )
                 
-                # Track character usage
+                
+                # Update player profile
+                player_profile['last_display_name'] = p_entry.name
                 if p_entry.character:
                     char = p_entry.character
-                    player_stats['characters_used'][char] = (
-                        player_stats['characters_used'].get(char, 0) + 1
+                    player_profile['characters_used'][char] = (
+                        player_profile['characters_used'].get(char, 0) + 1
                 )
                     
                 # Update in cache
                 stats_cache.update_player_stats(account_id, player_stats)
+                profile_cache.update_player_profile(account_id, player_profile)
     
-    # Save all changes to disk
+    # Recalculate ranks after updating stats
     stats_cache.calculate_ranks()
+    # Save all changes to disk
     stats_cache.save_stats()
+    profile_cache.save_profiles()
 
 def record_stats() -> None:
     """Activate the stats tracking system."""

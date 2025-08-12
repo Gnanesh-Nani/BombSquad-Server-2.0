@@ -5,7 +5,8 @@ import utils
 import logger
 
 stats_settings = utils.get_module_setting("stats")
-STATS_FILE = Path(__file__).parent.parent / "stats" / stats_settings["stats_file"]
+# STATS_FILE = Path(__file__).parent.parent / "stats" / stats_settings["stats_file"]
+STATS_FILE = Path(__file__).parent / "json_datas" / stats_settings["stats_file"]
 
 class _StatsCache:
     def __init__(self, cache_file=STATS_FILE):
@@ -35,6 +36,9 @@ class _StatsCache:
     def get_player_rank(self, account_id):
         """Get the rank of a player by account ID"""
         return self.stats.get(account_id, {}).get('rank', 0)
+
+    def get_player_kd(self,account_id):
+        return self.stats.get(account_id,{}).get('kd',0)
     
     def calculate_ranks(self):
         """Recalculate all player ranks based on current scores"""
