@@ -3,7 +3,7 @@ from pathlib import Path
 import utils
 import logger
 
-PROFILE_FILE = Path(__file__).parent / "json_datas" / "profiles.json"
+PROFILE_FILE = Path(__file__).parent / "json_data" / "profiles.json"
 
 class _ProfileCache:
     def __init__(self, cache_file=PROFILE_FILE):

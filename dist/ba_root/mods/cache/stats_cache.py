@@ -6,7 +6,7 @@ import logger
 
 stats_settings = utils.get_module_setting("stats")
 # STATS_FILE = Path(__file__).parent.parent / "stats" / stats_settings["stats_file"]
-STATS_FILE = Path(__file__).parent / "json_datas" / stats_settings["stats_file"]
+STATS_FILE = Path(__file__).parent / "json_data" / stats_settings["stats_file"]
 
 class _StatsCache:
     def __init__(self, cache_file=STATS_FILE):

@@ -108,7 +108,7 @@ def wrap_player_spaz_class(player_spaz_class):
     return wrapper_player_spaz
 
 def apply_tags():
-    logger.log_debug("Wrapping PlayerSpaz class with RankTag functionality.")
+    logger.log_debug("Wrapping PlayerSpaz class for Tags functionality.")
     playerspaz.PlayerSpaz = wrap_player_spaz_class(playerspaz.PlayerSpaz)
         
 
