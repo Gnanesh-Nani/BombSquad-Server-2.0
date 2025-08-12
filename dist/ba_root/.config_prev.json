@@ -134,27 +134,31 @@
   ]
  },
  "Default Player Profiles": {
-  "Client Input Device #1": "N A N I"
+  "Client Input Device #1": "N A N I",
+  "Client Input Device #2": "__account__"
  },
  "FFA Series Length": 24,
  "Fleet Zone Ping Last Flush Time": 1754625429,
  "Fleet Zone Pings": {
   "prod": {
-   "bahrain.v4": 318.6864274918389,
-   "bahrain.v6": 299.46359699988534,
-   "bangkok.v4": 158.09302585035584,
-   "delhi.v4": 155.91572170389918,
-   "dubai.v4": 304.4995227959098,
-   "dubai.v6": 185.70744161224138,
-   "hong_kong.v4": 145.34523699967394,
-   "hong_kong.v6": 212.43221999975503,
-   "hyderabad.v4": 106.61551392828915,
-   "hyderabad.v6": 83.4281202977727,
-   "kolkata.v4": 124.53945361969818,
-   "mumbai.v4": 222.36713110780875,
-   "mumbai.v6": 147.47234797590863,
-   "singapore.v4": 206.1171135334589,
-   "singapore.v6": 141.28658435166108
+   "bahrain.v4": 204.75967107628458,
+   "bahrain.v6": 390.60776400037867,
+   "bangkok.v4": 184.6358043194432,
+   "delhi.v4": 192.82108345567394,
+   "dubai.v4": 360.19289391178063,
+   "dubai.v6": 230.21416248397327,
+   "hong_kong.v4": 168.94501299975673,
+   "hong_kong.v6": 150.62918499916123,
+   "hyderabad.v4": 93.3380017415694,
+   "hyderabad.v6": 85.06393743805032,
+   "jakarta.v4": 224.38293599952885,
+   "jakarta.v6": 190.72686500021518,
+   "kolkata.v4": 158.74364611353667,
+   "manila.v4": 218.9295799998945,
+   "mumbai.v4": 108.27917658381011,
+   "mumbai.v6": 166.4694071400154,
+   "singapore.v4": 105.22399945810503,
+   "singapore.v6": 138.69140872794378
   }
  },
  "Free-for-All Playlist Randomize": true,
@@ -237,7 +241,7 @@
   ]
  },
  "Teams Series Length": 7,
- "launchCount": 227,
+ "launchCount": 246,
  "lc14173": 1,
  "lc14292": 1
 }

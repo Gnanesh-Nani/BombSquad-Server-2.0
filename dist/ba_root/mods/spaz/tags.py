@@ -1,7 +1,7 @@
 import bascenev1 as bs
 from bascenev1lib.actor import playerspaz
-from stats.record_stats import get_rank
 import logger
+from cache import stats_cache
 
 from typing import TYPE_CHECKING, Sequence
 
@@ -22,7 +22,7 @@ class RankTag:
         if( not self.account_id):
             logger.log_error("RankTag: No account_id found for player_spaz.")
             return
-        self.rank = get_rank(self.account_id)
+        self.rank = stats_cache.get_player_rank(self.account_id)
         self.set_rank(player_spaz, color=(1.0, 1.0, 1.0))
     
     def set_rank(self,player_spaz,color: Sequence[float] = (1.0,1.0,1.0) ) -> None:
