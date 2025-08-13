@@ -46,7 +46,7 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
 
                 player_profile = profile_cache.get_player_profile(account_id,{
                     'characters_used': {},
-                    'last_seen': datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace("+00:00", "Z")
+                    'last_seen': utils.get_current_time_iso(),
                 })
                 
                 # Update player profile
@@ -56,7 +56,8 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
                     player_profile['characters_used'][char] = (
                         player_profile['characters_used'].get(char, 0) + 1
                 )
-                player_profile['last_seen'] = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace("+00:00", "Z")
+                player_profile['last_seen'] = utils.get_current_time_iso()
+                
                 # Update in cache
                 profile_cache.update_player_profile(account_id, player_profile)
     

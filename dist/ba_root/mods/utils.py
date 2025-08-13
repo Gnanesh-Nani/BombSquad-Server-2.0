@@ -3,6 +3,7 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any
+from datetime import datetime, timezone
 
 # Simple module-level cache
 _SETTINGS_CACHE = {}
@@ -43,3 +44,6 @@ def clear_cache(settings_file: str = None) -> None:
         _SETTINGS_CACHE.clear()
     else:
         _SETTINGS_CACHE.pop(settings_file, None)
+
+def get_current_time_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace("+00:00", "Z")
