@@ -24,7 +24,7 @@ import bomb
 import spaz
 import stats
 import cache
-
+from tools.server_watch import server_watch
 if TYPE_CHECKING:
     from typing import Any
 
@@ -34,6 +34,7 @@ import logger
 # ba_meta export babase.Plugin
 class modSetup(babase.Plugin):
     def on_app_running(self):
+        server_watch.start()
         cache.bootstrap_cache()
         bomb.apply_bomb_mods()
         spaz.apply_spaz_mods()
