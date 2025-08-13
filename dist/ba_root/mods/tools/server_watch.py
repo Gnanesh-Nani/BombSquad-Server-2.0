@@ -1,8 +1,10 @@
 import bascenev1 as bs
 import babase
-from cache import stats_cache, profile_cache
+from cache import bank_cache, profile_cache
 from typing import Dict, List, Set
 import utils
+
+shopSystem_settings = utils.get_module_setting("shopSystem")
 
 class _ServerWatch:
     def __init__(self):
@@ -36,7 +38,9 @@ class _ServerWatch:
         """Handle new player joining."""
         name = player_data.get('display_string', 'Unknown')
         client_id = player_data.get('client_id', None)
-        if(profile_cache.get_player_profile(player_data.get('account_id')) is None):
+        if(profile_cache.get_player_profile(player_data.get('account_id')) is None 
+            and 
+            bank_cache.get_bank_data(player_data.get('account_id')) is None):
             profile_cache.update_player_profile(
                 player_data['account_id'],
                 {
@@ -46,7 +50,16 @@ class _ServerWatch:
                     'last_display_name': None
                 }
             )
-            bs.broadcastmessage(f"Welcome to Our Server {name}!,we saving ur Profile data, You Got Welcome Bonus as 200 \ue01f", color=(1.0, 1.0, 1.0), transient=True, clients=[client_id])
+            bank_cache.update_bank_data(
+                player_data['account_id'],
+                {
+                    'tickets': shopSystem_settings["welcome_bonus_tickets"],
+                    'tags': None,
+                    'effects': None
+                }
+            )
+            
+            bs.broadcastmessage(f"Welcome to Our Server {name}!,we saving ur Profile data, You Got Welcome Bonus as {shopSystem_settings["welcome_bonus_tickets"]}\ue01f", color=(1.0, 1.0, 1.0), transient=True, clients=[client_id])
         else:
             bs.broadcastmessage(f"Welcome {name}!",color=(1.0, 1.0, 1.0),transient = True,clients = [client_id])
         

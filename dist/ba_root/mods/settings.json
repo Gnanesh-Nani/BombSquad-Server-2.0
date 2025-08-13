@@ -26,5 +26,11 @@
       "rank_prefix": "#",
       "rank_suffix": ""
     }
+  },
+  "shopSystem": {
+    "enabled": true,
+    "daily_login_tickets": 100,
+    "welcome_bonus_tickets": 400,
+    "tickets_per_kill": 5
   }
 }

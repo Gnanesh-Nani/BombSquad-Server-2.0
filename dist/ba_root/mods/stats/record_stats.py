@@ -3,13 +3,14 @@ from typing import Dict, Any, List, Tuple
 from bascenev1._activitytypes import ScoreScreenActivity
 import bascenev1 as bs
 import utils
-from cache import stats_cache  
-from cache import profile_cache
+from cache import stats_cache , profile_cache, bank_cache
+
 import logger
 from datetime import datetime, timezone
 
 
 stats_settings = utils.get_module_setting("stats")
+shopSystem_settings = utils.get_module_setting("shopSystem")
 
 # Store original method
 _original_on_begin = ScoreScreenActivity.on_begin
@@ -39,10 +40,19 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
                     player_stats['deaths'] += p_entry.accum_killed_count
                     player_stats['score'] += p_entry.accumscore
                     player_stats['games_played'] += 1
-                    player_stats['kd'] = player_stats['kills'] / (
-                        player_stats['deaths'] if player_stats['deaths'] > 0 else 1
+                    player_stats['kd'] = round(
+                        player_stats['kills'] / (player_stats['deaths'] if player_stats['deaths'] > 0 else 1), 2
                     )
                     stats_cache.update_player_stats(account_id, player_stats)
+
+                if shopSystem_settings["enabled"]:
+                    bank_data = bank_cache.get_bank_data(account_id, {
+                        'tickets': 0,
+                        'tags': None,
+                        'effects': None
+                    })
+                    bank_data['tickets'] += shopSystem_settings["tickets_per_kill"] * p_entry.accum_kill_count
+                    bank_cache.update_bank_data(account_id, bank_data)
 
                 player_profile = profile_cache.get_player_profile(account_id,{
                     'characters_used': {},
@@ -64,8 +74,10 @@ def _patched_show_player_scores(self, *args, **kwargs) -> None:
     if( stats_settings["record_stats"]):
         stats_cache.calculate_ranks()
         stats_cache.save_stats()
-
+    if shopSystem_settings["enabled"]:
+        bank_cache.save_bank_data()
     profile_cache.save_profiles()
+    
 
 def record_stats() -> None:
     """Activate the stats tracking system."""
